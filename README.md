@@ -6,7 +6,7 @@
 
 このリンクから招待できます
 
-[このBOTを招待する]()
+[このBOTを招待する](https://aka.ablaze.one/pinbot)
 
 ### セルフホスト
 
