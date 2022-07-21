@@ -4,4 +4,4 @@ services:
   app:
     image: .
     environment:
-      - DISCORD_API_TOKEN=value
+      - DISCORD_API_TOKEN=[TOKEN]
