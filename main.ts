@@ -5,12 +5,11 @@ import {
 } from "discord.js";
 import env from "./config";
 import { commandResister, interactionRunner } from "./commands/runner";
+import { Log } from "./utils/logger";
 
 const client: Client = new Client({
     intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.MessageContent,
-        GatewayIntentBits.GuildMessages
+        GatewayIntentBits.Guilds
     ],
     partials: [Partials.Channel]
 });
@@ -18,12 +17,12 @@ const client: Client = new Client({
 client.once("ready", async () =>{
     process.title = `PinBot(${env.VERSION})`;
 
-    await client.application?.commands.set(commandResister(), env.DEBUG);
+    await client.application?.commands.set(commandResister(), env.DEBUG?env.DEBUG:"");
 
-    console.log("Started");
+    Log({ type: "info", content: `Started PinBot(${env.VERSION})` });
 });
 
-if(env.DEBUG !== undefined) client.on("debug", console.log).on("warn", console.log)
+if(env.DEBUG !== undefined) client.on("debug", console.log).on("warn", console.log);
 
 client.on("interactionCreate", async (interaction: any) =>{
     interactionRunner(interaction).catch(e => console.error(e));

@@ -12,6 +12,7 @@ const execute = async (interaction: any) =>{
     const Embed = new EmbedBuilder()
     .setTitle("PinBot ヘルプ")
     .setDescription("全員にピン留め権限を付与します。ただしメッセージの送信または閲覧できないチャンネルでは使用できません")
+    .setColor("#c4ff89")
     .addFields([
         { name: "使い方", value: "ピン留めしたいメッセージを右クリックして「アプリ」→「Pin」をクリックすることでピン留めできます" },
         { name: "Version", value: env.VERSION },
