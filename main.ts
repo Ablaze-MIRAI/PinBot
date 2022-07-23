@@ -21,7 +21,7 @@ client.once("ready", async () =>{
 
     setInterval(() =>{
         client.user?.setActivity({
-            name: `/help|${client.guilds.cache.size}サーバー`
+            name: `/help | ${client.guilds.cache.size}サーバーで稼働中`
         });
     }, 5000);
 
