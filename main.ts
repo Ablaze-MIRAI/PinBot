@@ -19,6 +19,12 @@ client.once("ready", async () =>{
 
     await client.application?.commands.set(commandResister(), env.DEBUG?env.DEBUG:"");
 
+    setInterval(() =>{
+        client.user?.setActivity({
+            name: `/help|${client.guilds.cache.size}サーバー`
+        });
+    }, 5000);
+
     Log({ type: "info", content: `Started PinBot(${env.VERSION})` });
 });
 
