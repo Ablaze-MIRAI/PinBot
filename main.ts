@@ -1,5 +1,6 @@
 import {
     Client,
+    ErrorEvent,
     GatewayIntentBits,
     Partials
 } from "discord.js";
@@ -30,8 +31,12 @@ client.once("ready", async () =>{
 
 if(env.DEBUG !== undefined) client.on("debug", console.log).on("warn", console.log);
 
-client.on("interactionCreate", async (interaction: any) =>{
-    interactionRunner(interaction).catch(e => console.error(e));
-});
+try{
+    client.on("interactionCreate", async (interaction: any) =>{
+        interactionRunner(interaction).catch(e => console.error(e));
+    });
+}catch(e: any){
+    Log({ type: "error", "content": e.message })
+}
 
 client.login(env.TOKEN);
