@@ -6,12 +6,12 @@
     "compile": "tsc"
   },
   "dependencies": {
-    "discord-api-types": "^0.36.2",
-    "discord.js": "^14.0.2"
+    "discord-api-types": "^0.36.3",
+    "discord.js": "^14.13.0"
   },
   "devDependencies": {
     "ts-node": "^10.9.1",
     "tsc": "^2.0.4",
-    "typescript": "^4.7.4"
+    "typescript": "^5.2.2"
   }
 }
